@@ -1,4 +1,4 @@
-import ContactList from './ContactList'
+import ContactList from './components/ContactList'
 import './App.css'
 
 function App() {

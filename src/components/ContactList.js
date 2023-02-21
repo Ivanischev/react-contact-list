@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import ContactTable from './components/ContactTable'
+import ContactForm from './ContactForm'
+import ContactTable from './ContactTable'
 
 class ContactList extends Component {
   constructor(props) {
@@ -48,21 +49,7 @@ class ContactList extends Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            name
-            <input name="contactName" type="text" value={this.state.name} onChange={this.handleInputChange} />
-          </label>
-          <label>
-            surname
-            <input name="contactSurname" type="text" value={this.state.surname} onChange={this.handleInputChange} />
-          </label>
-          <label>
-            phone
-            <input name="contactPhone" type="text" value={this.state.phone} onChange={this.handleInputChange} />
-          </label>
-          <button type="submit">Save</button>
-        </form>
+        <ContactForm handleInputChange={this.handleInputChange} handleSubmit={this.handleSubmit} />
         <ContactTable contacts={this.state.contacts} removeHandler={this.removeHandler} />
       </>
     )
