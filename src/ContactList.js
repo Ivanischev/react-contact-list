@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ContactTable from './components/ContactTable'
 
 class ContactList extends Component {
   constructor(props) {
@@ -37,23 +38,33 @@ class ContactList extends Component {
     event.target.reset()
   }
 
+  removeHandler = (id) => {
+    const filteredContacts = this.state.contacts.filter((contact) => contact.id !== id)
+    this.setState({
+      contacts: filteredContacts,
+    })
+  }
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          name
-          <input name="contactName" type="text" value={this.state.name} onChange={this.handleInputChange} />
-        </label>
-        <label>
-          surname
-          <input name="contactSurname" type="text" value={this.state.surname} onChange={this.handleInputChange} />
-        </label>
-        <label>
-          phone
-          <input name="contactPhone" type="text" value={this.state.phone} onChange={this.handleInputChange} />
-        </label>
-        <button type="submit">save</button>
-      </form>
+      <>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            name
+            <input name="contactName" type="text" value={this.state.name} onChange={this.handleInputChange} />
+          </label>
+          <label>
+            surname
+            <input name="contactSurname" type="text" value={this.state.surname} onChange={this.handleInputChange} />
+          </label>
+          <label>
+            phone
+            <input name="contactPhone" type="text" value={this.state.phone} onChange={this.handleInputChange} />
+          </label>
+          <button type="submit">Save</button>
+        </form>
+        <ContactTable contacts={this.state.contacts} removeHandler={this.removeHandler} />
+      </>
     )
   }
 }
