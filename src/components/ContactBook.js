@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import ContactForm from './ContactForm'
-import ContactTable from './ContactTable'
+import ContactsList from './ContactsList'
 
-class ContactList extends Component {
+class ContactBook extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -70,11 +70,11 @@ class ContactList extends Component {
             cancelHandler={this.cancelHandler}
           />
         ) : (
-          <ContactTable contacts={this.state.contacts} removeHandler={this.removeHandler} showForm={this.showForm} />
+          <ContactsList contacts={this.state.contacts} removeHandler={this.removeHandler} showForm={this.showForm} />
         )}
       </>
     )
   }
 }
 
-export default ContactList
+export default ContactBook

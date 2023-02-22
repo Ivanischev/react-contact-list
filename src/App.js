@@ -1,10 +1,10 @@
-import ContactList from './components/ContactList'
-import './App.css'
+import ContactBook from './components/ContactBook'
+import './App.scss'
 
 function App() {
   return (
     <div className="App">
-      <ContactList />
+      <ContactBook />
     </div>
   )
 }

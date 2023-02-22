@@ -1,0 +1,67 @@
+@import 'styles/_colors.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100% !important;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 920px;
+  margin: 0 auto 24px !important;
+}
+
+hr {
+  border-color: $border-color;
+  border-width: 0.5px;
+  border-style: solid;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn-group {
+  button {
+    margin-right: 15px;
+  }
+}
+.btn-primary {
+  background: $accent;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+  padding: 15px;
+  &__fullname {
+    font-weight: 700;
+  }
+  &__phone {
+    color: $gray;
+  }
+}
+
+input {
+  border-style: solid;
+  border-color: $input-color;
+  border-width: 1px;
+  padding: 10px;
+  width: 100%;
+  margin: 10px 0;
+  margin-right: 20px;
+  max-width: 240px;
+}

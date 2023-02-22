@@ -3,14 +3,17 @@ import React, { Component } from 'react'
 class ContactItem extends Component {
   render() {
     return (
-      <tr>
-        <td>{this.props.item.name}</td>
-        <td>{this.props.item.surname}</td>
-        <td>{this.props.item.phone}</td>
-        <td>
-          <button onClick={() => this.props.removeHandler(this.props.item.id)}>Remove</button>
-        </td>
-      </tr>
+      <div className="item">
+        <div className="contact-info">
+          <p className="item__fullname">
+            {this.props.item.name} {this.props.item.surname}
+          </p>
+          <p className="item__phone">{this.props.item.phone}</p>
+        </div>
+        <button className="item__remove" onClick={() => this.props.removeHandler(this.props.item.id)}>
+          Remove
+        </button>
+      </div>
     )
   }
 }
