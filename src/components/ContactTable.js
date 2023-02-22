@@ -5,7 +5,7 @@ class ContactTable extends Component {
   render() {
     return (
       <>
-        <h1>Contact List</h1>
+        <h1>Contacts</h1>
         <table>
           <thead>
             <tr>
@@ -21,7 +21,7 @@ class ContactTable extends Component {
             })}
           </tbody>
         </table>
-        {/* <button onClick={() => {}}>Add Contact</button> */}
+        <button onClick={() => this.props.showForm()}>Add Contact</button>
       </>
     )
   }

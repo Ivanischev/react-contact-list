@@ -7,10 +7,11 @@ class ContactList extends Component {
     super(props)
     this.state = {
       contacts: [
-        { id: 1, name: 'Ivan', surname: 'Ivanishchev', phone: '050050505005' },
-        { id: 2, name: 'Ivan', surname: 'Ivanishchev', phone: '050050505005' },
-        { id: 3, name: 'Ivan', surname: 'Ivanishchev', phone: '050050505005' },
+        { id: 1, name: 'John', surname: 'Doe', phone: '+380500505050' },
+        { id: 2, name: 'Thomas', surname: 'Anderson', phone: '380500505050' },
+        { id: 3, name: 'Ivan', surname: 'Ivanishchev', phone: '380500505050' },
       ],
+      show: false,
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -35,6 +36,7 @@ class ContactList extends Component {
     }
     this.setState({
       contacts: [...this.state.contacts, newContact],
+      show: false,
     })
     event.target.reset()
   }
@@ -46,11 +48,30 @@ class ContactList extends Component {
     })
   }
 
+  showForm = () => {
+    this.setState({
+      show: true,
+    })
+  }
+
+  cancelHandler = () => {
+    this.setState({
+      show: false,
+    })
+  }
+
   render() {
     return (
       <>
-        <ContactForm handleInputChange={this.handleInputChange} handleSubmit={this.handleSubmit} />
-        <ContactTable contacts={this.state.contacts} removeHandler={this.removeHandler} />
+        {this.state.show ? (
+          <ContactForm
+            handleInputChange={this.handleInputChange}
+            handleSubmit={this.handleSubmit}
+            cancelHandler={this.cancelHandler}
+          />
+        ) : (
+          <ContactTable contacts={this.state.contacts} removeHandler={this.removeHandler} showForm={this.showForm} />
+        )}
       </>
     )
   }
