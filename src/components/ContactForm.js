@@ -13,7 +13,6 @@ class ContactForm extends Component {
             value={this.props.name}
             onChange={this.props.handleInputChange}
             placeholder="Name"
-            required
           />
           <input
             name="contactSurname"
@@ -21,7 +20,6 @@ class ContactForm extends Component {
             value={this.props.surname}
             onChange={this.props.handleInputChange}
             placeholder="Surname"
-            required
           />
           <input
             name="contactPhone"
@@ -29,7 +27,6 @@ class ContactForm extends Component {
             value={this.props.phone}
             onChange={this.props.handleInputChange}
             placeholder="Phone number"
-            required
           />
           <div className="btn-group">
             <button type="submit" className="btn-primary">

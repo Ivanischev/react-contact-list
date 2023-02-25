@@ -45,6 +45,7 @@ button {
 .item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid $border-color;
   padding: 15px;
   &__fullname {
@@ -52,6 +53,13 @@ button {
   }
   &__phone {
     color: $gray;
+  }
+  &__remove {
+    background: transparent;
+    border-style: solid;
+    border-color: #ffd281;
+    padding: 6px 15px;
+    font-weight: 800;
   }
 }
 
